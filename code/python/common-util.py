@@ -6,7 +6,8 @@ import numpy as np
 import talib
 
 # 各种常用类库
-# https://github.com/HuaRongSAO/talib-document  https://mrjbq7.github.io/ta-lib/
+# https://github.com/HuaRongSAO/talib-document
+# https://mrjbq7.github.io/ta-lib/
 # talib
 """
 TA-Lib广泛应用与交易软件，和金融市场数据进行技术分析。
@@ -78,8 +79,25 @@ output = talib.SMA(close)
 # WMA = talib.WMA(close)
 # DEMA = talib.DEMA(close)
 # TEMA = talib.TEMA(close)
+"""
+BBANDS(real[, timeperiod=?, nbdevup=?, nbdevdn=?, matype=?])
 
-upper, middle, lower = talib.BBANDS(close)
+    Bollinger Bands (Overlap Studies)
+
+    Inputs:
+        real: (any ndarray)
+    Parameters:
+        timeperiod: 5
+        nbdevup: 2
+        nbdevdn: 2
+        matype: 0 (Simple Moving Average)
+    Outputs:
+        upperband
+        middleband
+        lowerband
+"""
+
+upper, middle, lower = talib.BBANDS(close,timeperiod=1)
 
 mom = talib.MOM(close, timeperiod=5)
 
